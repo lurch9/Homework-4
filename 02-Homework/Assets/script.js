@@ -99,7 +99,7 @@ function startTime() {
 
 
 function randomQuestions() {
-  removeEls(startButton);
+  removeElement(startButton);
   
   if (questionCount < 5) {
     var j = NaN;
@@ -194,7 +194,7 @@ const removeElement = (...els) => {
 // Unable to get leaderboard functionality working
 
 /*function displayAllScores() {
-  removeEls(timer, startButton, results);
+  removeElement(timer, startButton, results);
   let scoresArray = defineScoresArray(storedArray, emptyArray);
 
   scoresArray.forEach(element => {
@@ -224,7 +224,7 @@ function clearScores() {
   wipeScores.setAttribute("value", "Clear Scores");
   wipeScores.addEventListener("click", function(event){
     event.preventDefault();
-    removeEls(scoresDiv);
+    removeElement(scoresDiv);
     window.localStorage.removeItem("highScores");
   })
   scoresDiv.append(wipeScores)
