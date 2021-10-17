@@ -166,7 +166,7 @@ function captureUserScore() {
 
     scoresArray.push(userScore);
     saveScores(scoresArray);
-    displayAllScores();
+    //displayAllScores();
     clearScores();
     goBack();
     viewScores.remove();
@@ -187,11 +187,13 @@ const defineScoresArray = (arr1, arr2) => {
   }
 }
 
-const removeEls = (...els) => {
+const removeElement = (...els) => {
   for (let element of els) element.remove();
 }
 
-function displayAllScores() {
+// Unable to get leaderboard functionality working
+
+/*function displayAllScores() {
   removeEls(timer, startButton, results);
   let scoresArray = defineScoresArray(storedArray, emptyArray);
 
@@ -203,14 +205,14 @@ function displayAllScores() {
     results.innerText = initials + ": " + savedScore;
     scores.append(results);
   });
-}
+}*/
 
 function displayScores() {
   viewScores.addEventListener("click", function(event) {
     event.preventDefault();
-    removeEls(timer, startButton);
+    removeElement(timer, startButton);
     displayAllScores();
-    removeEls(viewScores);
+    removeElement(viewScores);
     clearScores();
     goBack();
   });
